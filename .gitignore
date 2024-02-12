@@ -1,0 +1,12 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+data/corpora/bnc
+data/corpora/coca_free
+data/corpora/coha
+data/corpora/twitter_kaggle_sentiment140
+data/corpora/reddit/*
+utilities/gutenberg/data
+src/reddit_credentials.py
+data/corpora/twitter_topics/*
