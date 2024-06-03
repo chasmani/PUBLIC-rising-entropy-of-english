@@ -39,6 +39,7 @@ def big_fig(N=2000):
 
 	ax1.spines['right'].set_visible(False)
 	ax1.spines['top'].set_visible(False)
+	ax1.spines['bottom'].set_visible(False)
 
 	trans = mtransforms.ScaledTranslation(-20/72, 7/72, fig.dpi_scale_trans)
 	ax1.text(0.0, 1.0, s="a", transform=ax1.transAxes + trans,
@@ -53,6 +54,7 @@ def big_fig(N=2000):
 
 	ax2.spines['right'].set_visible(False)
 	ax2.spines['top'].set_visible(False)
+	ax2.spines['bottom'].set_visible(False)
 
 	trans = mtransforms.ScaledTranslation(-20/72, 7/72, fig.dpi_scale_trans)
 	ax2.text(0.0, 1.0, s="b", transform=ax2.transAxes + trans,
@@ -68,6 +70,7 @@ def big_fig(N=2000):
 	ax3.invert_yaxis()
 	ax3.spines['right'].set_visible(False)
 	ax3.spines['top'].set_visible(False)
+	ax3.spines['bottom'].set_visible(False)
 
 	ax3.text(0.0, 1.0, s="c", transform=ax3.transAxes + trans,
 					fontsize='xx-large', va='center', weight="bold")

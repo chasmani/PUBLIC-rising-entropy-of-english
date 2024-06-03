@@ -197,7 +197,7 @@ def combined_snapshots(measure="H_2", measure_name="Bigram Entropy"):
 	long_form_cats[15] = "BNC ACPROSE"
 	long_form_cats[16] = "BNC FICTION"
 
-	category_ticks = ["", "Reddit 2023", "Twitter 2020", "Twitter 2009", "", "COHA News", "COHA Magazines", 
+	category_ticks = ["", "Reddit 2024", "Twitter 2020", "Twitter 2009", "", "COHA News", "COHA Magazines", 
 		"COCA News", "COCA Magazines", "BNC News", "", "COHA Non-Fiction",
 		"COHA Fiction", "COCA Non-Fiction", "COCA Fiction", "BNC Non-Fiction", 
 		"BNC Fiction"]
@@ -259,6 +259,6 @@ if __name__=="__main__":
 
 	fig = plt.figure(figsize=(fig_width, fig_height), constrained_layout=True)
 	
-	combined_snapshots(measure="H_1", measure_name="Word Entropy")
+	combined_snapshots(measure="H_2", measure_name="Bigram Entropy")
 
 	plt.show()
