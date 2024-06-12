@@ -114,9 +114,6 @@ def generate_and_save_kpss_distribution(filename="../data/kpss_dist.npy"):
 	np.save(filename, squared_BB_dist)
 	return squared_BB_dist
 
-
-
-
 def mann_kendall_coha(category="news", N=2000, min_year=1900, max_year=2000, measure="H_1"):
 
 	input_filename = "../data/results/results_word_measures_coha.csv"
@@ -158,7 +155,6 @@ def mann_kendall_coha(category="news", N=2000, min_year=1900, max_year=2000, mea
 
 	# Calculate the effective sample size (ESS)
 	n = len(X)
-	
 
 	# Create a dictionary to store the results
 	result_dict = {
@@ -247,8 +243,6 @@ def format_p_value(p_value):
 		return "p < 0.001"
 	else:
 		return "p = {:.3f}".format(p_value)
-
-
 
 if __name__=="__main__":
 	analyse_coha_table()

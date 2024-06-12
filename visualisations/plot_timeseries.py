@@ -60,15 +60,18 @@ def get_timeseries_combined_plot_with_conf_intervals(measure="H_1", N=2000):
 	all_results = []
 	all_sderrs = []
 
+	print(len(df))
+
 	for category in categories:
 		this_df = df[(df['category'] == category)]
+		print(category, len(this_df))
+
 		this_results = []
 		this_sderrs = []
 
 		data_years = this_df["year"]
 		data_values = this_df[measure]
 
-		
 		smoothed_years, smoothed_results, sderrs = get_centered_moving_average(data_years, data_values, plus_minus_years)
 
 		for year in all_years:
@@ -85,8 +88,6 @@ def get_timeseries_combined_plot_with_conf_intervals(measure="H_1", N=2000):
 
 		all_results.append(this_results)
 		all_sderrs.append(this_sderrs)
-
-	print(all_results)
 
 	means = []
 	mean_sderrs = []
@@ -187,9 +188,6 @@ def plot_timeseries_with_media_categories(measure="H_1", measure_name="Word Entr
 
 		smoothed_years, smoothed_results, sderrs = get_centered_moving_average(data_years, data_values, plus_minus_years)
 
-		print(category)
-		for year, result, sderr in zip(smoothed_years, smoothed_results, sderrs):
-			print("{}\t{}\t{}".format(year, result, sderr))
 
 		plt.plot(smoothed_years, smoothed_results, label=category, linewidth=LINEWIDTH, **this_style)
 
@@ -214,6 +212,7 @@ def plot_timeseries_with_media_categories(measure="H_1", measure_name="Word Entr
 
 	ax.spines['right'].set_visible(False)
 	ax.spines['top'].set_visible(False)
+	ax.spines['bottom'].set_visible(False)
 
 	plt.xlabel("Year")
 	plt.ylabel(measure_name)
@@ -235,5 +234,5 @@ def plot_timeseries_with_media_categories(measure="H_1", measure_name="Word Entr
 if __name__=="__main__":
 	#get_timeseries_combined_plot_with_conf_intervals()
 	#plt.show()
-	plot_timeseries_with_media_categories(measure="H_1", measure_name="Word Entropy")
+	plot_timeseries_with_media_categories(measure="zipf_clauset", measure_name="-Zipf Exponent")
 	

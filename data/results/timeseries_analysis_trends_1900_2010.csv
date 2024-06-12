@@ -11,3 +11,16 @@ Zipf Exponent;News;Statistic=1.509, p < 0.001;Tau=-0.535, p < 0.001, 95% CI [-0.
 Zipf Exponent;Magazine;Statistic=1.753, p < 0.001;Tau=-0.749, p < 0.001, 95% CI [-0.877, -0.622], N=108
 Zipf Exponent;Fiction;Statistic=1.390, p = 0.002;Tau=-0.528, p = 0.003, 95% CI [-0.656, -0.401], N=109
 Zipf Exponent;Non-Fiction;Statistic=1.297, p = 0.029;Tau=-0.402, p = 0.016, 95% CI [-0.529, -0.275], N=109
+Measure;Category;KPSS;MK
+Word Entropy;News;Statistic=1.475, p < 0.001;Tau=0.508, p < 0.001, 95% CI [0.374, 0.642], N=98
+Word Entropy;Magazine;Statistic=1.741, p < 0.001;Tau=0.712, p < 0.001, 95% CI [0.585, 0.840], N=108
+Word Entropy;Fiction;Statistic=1.305, p < 0.001;Tau=0.522, p = 0.001, 95% CI [0.395, 0.649], N=109
+Word Entropy;Non-Fiction;Statistic=1.402, p = 0.003;Tau=0.378, p = 0.005, 95% CI [0.251, 0.505], N=109
+Type Token Ratio;News;Statistic=1.179, p < 0.001;Tau=0.359, p < 0.001, 95% CI [0.225, 0.494], N=98
+Type Token Ratio;Magazine;Statistic=1.066, p < 0.001;Tau=0.409, p < 0.001, 95% CI [0.281, 0.536], N=108
+Type Token Ratio;Fiction;Statistic=0.962, p = 0.002;Tau=0.423, p = 0.002, 95% CI [0.296, 0.550], N=109
+Type Token Ratio;Non-Fiction;Statistic=0.674, p = 0.007;Tau=0.156, p = 0.010, 95% CI [0.029, 0.283], N=109
+Zipf Exponent;News;Statistic=1.509, p < 0.001;Tau=-0.535, p < 0.001, 95% CI [-0.670, -0.401], N=98
+Zipf Exponent;Magazine;Statistic=1.753, p < 0.001;Tau=-0.749, p < 0.001, 95% CI [-0.877, -0.622], N=108
+Zipf Exponent;Fiction;Statistic=1.390, p = 0.002;Tau=-0.528, p = 0.003, 95% CI [-0.656, -0.401], N=109
+Zipf Exponent;Non-Fiction;Statistic=1.297, p = 0.029;Tau=-0.402, p = 0.016, 95% CI [-0.529, -0.275], N=109

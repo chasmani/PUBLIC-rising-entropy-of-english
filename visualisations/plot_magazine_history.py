@@ -121,7 +121,7 @@ def plot_timeseries_with_magazine_circulation():
 
 	size_ratio = 1.5
 
-	plt.rcParams["figure.figsize"] = default_x_size*1.5, default_y_size*1.5
+	plt.rcParams["figure.figsize"] = default_x_size, default_y_size
 
 	measure = "H_1"
 
@@ -171,17 +171,26 @@ def plot_timeseries_with_magazine_circulation():
 	df["Monthly Circulation Index"] = df["Monthly Circulation"]/monthly_circ_2005_index*100
 	ax2.plot(df["Year"], df["Monthly Circulation Index"], label="US Magazine Circulation")
 
-	ax2.set_ylim([10, 300])
+	ax2.set_ylim([9, 400])
 	ax2.set_yscale('log')
 
 	ax2.set_ylabel('US Monthly Circulation (Millions)')
 
+	ax1.set_ylim([7.94, 8.41])
+
+
 	ax1.spines['top'].set_visible(False)
 	ax2.spines['top'].set_visible(False)
+	ax1.spines['bottom'].set_visible(False)
+	ax2.spines['bottom'].set_visible(False)
+	
+
 
 	plt.tight_layout()
 
 	plt.savefig("images/magazine_history.tiff", dpi=300)
+	plt.savefig("images/magazine_history.png", dpi=300)
+
 
 	plt.show()
 

@@ -110,7 +110,7 @@ def entropy_rising_simulation():
 	fig = plt.figure(figsize=(fig_width*1, fig_height), constrained_layout=True)
 	
 
-	prevalences = np.array(range(10,40,3))/100
+	prevalences = np.array(range(0,55,5))/100
 	print(prevalences)
 
 	prevalences_df = []
@@ -122,7 +122,7 @@ def entropy_rising_simulation():
 		n = int(500*prevalence)
 		
 
-		n_rs = list(np.random.uniform(low=20, high=30, size=n))
+		n_rs = list(np.random.uniform(low=0, high=30, size=n))
 
 		rs_consumed, rs_ignored = get_optimal_diet(n_rs, prevalence, t)
 
@@ -155,14 +155,28 @@ def entropy_rising_simulation():
 	#ax.legend(handles[:], ["Consumed", "Ignored"], title="Information", frameon=True, loc='center left', bbox_to_anchor=(1, 0.5))
 	ax.legend(handles[:], ["Consumed", "Ignored"], title="Information", frameon=True)
 
-	ax.set_xlim(right=12.5)
+	ax.set_xlim(right=12.5, left=-1)
 
 	ax.spines['right'].set_visible(False)
 	ax.spines['top'].set_visible(False)
 
+	xticks = ax.get_xticks()
+	xticklabels = np.array(range(0,55,5))/100
+
+
+
+# Add the extra tick label "0" at the beginning
+	
+	xticks = np.append(xticks, xticks[0] - (xticks[1] - xticks[0]))
+	xticks = np.arange(-1,10,1)
+
+		# Set the new y-tick labels and positions
+	ax.set_xticks(xticks)
+	ax.set_xticklabels(xticklabels)
 
 
 	plt.savefig("images/entropy_rising_simulation_with_survival.tiff", dpi=300)
+	plt.savefig("images/entropy_rising_simulation_with_survival.png", dpi=300)
 
 	plt.show()
 

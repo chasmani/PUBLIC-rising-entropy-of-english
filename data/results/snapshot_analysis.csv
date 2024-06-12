@@ -1,0 +1,10 @@
+Lexical Measure;Source;ANOVA Result
+Word Entropy;COHA;F(3, 3586) = 83, p = < 0.001, eta^2 = 0.065, 95% CI = [0.050, 0.086]
+Word Entropy;COCA;F(3, 501) = 34, p = < 0.001, eta^2 = 0.172, 95% CI = [0.121, 0.247]
+Word Entropy;BNC;F(2, 1316) = 662, p = < 0.001, eta^2 = 0.502, 95% CI = [0.469, 0.537]
+Type Token Ratio;COHA;F(3, 3586) = 34, p = < 0.001, eta^2 = 0.028, 95% CI = [0.019, 0.041]
+Type Token Ratio;COCA;F(3, 501) = 17, p = < 0.001, eta^2 = 0.094, 95% CI = [0.052, 0.157]
+Type Token Ratio;BNC;F(2, 1316) = 416, p = < 0.001, eta^2 = 0.388, 95% CI = [0.354, 0.426]
+Zipf Exponent;COHA;F(3, 3586) = 89, p = < 0.001, eta^2 = 0.070, 95% CI = [0.050, 0.096]
+Zipf Exponent;COCA;F(3, 501) = 39, p = < 0.001, eta^2 = 0.190, 95% CI = [0.138, 0.258]
+Zipf Exponent;BNC;F(2, 1316) = 682, p = < 0.001, eta^2 = 0.509, 95% CI = [0.472, 0.547]

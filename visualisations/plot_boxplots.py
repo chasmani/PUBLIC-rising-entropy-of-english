@@ -162,7 +162,6 @@ def combined_snapshots(measure="H_2", measure_name="Bigram Entropy"):
 	df = pd.concat([df_coca, df_coha, df_bnc, df_twitter, df_twitter_topics, df_reddit])
 	print("Total observations are ", len(df))
 
-	df.replace(to_replace="Twitter Kaggle Sentiment", value="Twitter", inplace=True)
 	df.replace(to_replace="Twitter Topic 34", value="Twitter 2020", inplace=True)
 	df.replace(to_replace="chrono_concat", value="", inplace=True)
 	df.replace(to_replace="chrono_concat_truncated", value="", inplace=True)
@@ -173,34 +172,57 @@ def combined_snapshots(measure="H_2", measure_name="Bigram Entropy"):
 
 	df["source category"] = df["source"] + " " + df["category"]
 
+	df.replace(to_replace="Reddit ", value="Reddit 2024", inplace=True)
+	df.replace(to_replace="Twitter 2020 ", value="Twitter 2020", inplace=True)
+	df.replace(to_replace="Twitter ", value="Twitter 2009", inplace=True)
+	df.replace(to_replace="COHA news", value="COHA News", inplace=True)
+	df.replace(to_replace="COHA mag", value="COHA Magazines", inplace=True)
+	df.replace(to_replace="COCA news", value="COCA News", inplace=True)
+	df.replace(to_replace="COCA mag", value="COCA Magazines", inplace=True)
+	df.replace(to_replace="BNC NEWS", value="BNC News", inplace=True)
+	df.replace(to_replace="COHA nf", value="COHA Non-Fiction", inplace=True)
+	df.replace(to_replace="COHA fic", value="COHA Fiction", inplace=True)
+	df.replace(to_replace="COCA acad", value="COCA Non-Fiction", inplace=True)
+	df.replace(to_replace="COCA fic", value="COCA Fiction", inplace=True)
+	df.replace(to_replace="BNC ACPROSE", value="BNC Non-Fiction", inplace=True)
+	df.replace(to_replace="BNC FICTION", value="BNC Fiction", inplace=True)	
+
 	print(df["source category"].unique())
 
 	all_cats_list = [""]*17
 
 	social_cats = all_cats_list.copy()
-	social_cats[1] = "Reddit "
-	social_cats[2] = "Twitter 2020 "
-	social_cats[3] = "Twitter "
+	social_cats[1] = "Reddit 2024"
+	social_cats[2] = "Twitter 2020"
+	social_cats[3] = "Twitter 2009"
 
 	short_form_cats = all_cats_list.copy()
-	short_form_cats[5] = "COHA news"
-	short_form_cats[6] = "COHA mag"
-	short_form_cats[7] = "COCA news"
-	short_form_cats[8] = "COCA mag"
-	short_form_cats[9] = "BNC NEWS"
+	short_form_cats[5] = "COHA News"
+	short_form_cats[6] = "COHA Magazines"
+	short_form_cats[7] = "COCA News"
+	short_form_cats[8] = "COCA Magazines"
+	short_form_cats[9] = "BNC News"
 
 	long_form_cats = all_cats_list.copy()
-	long_form_cats[11] = "COHA nf"
-	long_form_cats[12] = "COHA fic"
-	long_form_cats[13] = "COCA acad"
-	long_form_cats[14] = "COCA fic"
-	long_form_cats[15] = "BNC ACPROSE"
-	long_form_cats[16] = "BNC FICTION"
+	long_form_cats[11] = "COHA Non-Fiction"
+	long_form_cats[12] = "COHA Fiction"
+	long_form_cats[13] = "COCA Non-Fiction"
+	long_form_cats[14] = "COCA Fiction"
+	long_form_cats[15] = "BNC Non-Fiction"
+	long_form_cats[16] = "BNC Fiction"
 
 	category_ticks = ["", "Reddit 2024", "Twitter 2020", "Twitter 2009", "", "COHA News", "COHA Magazines", 
 		"COCA News", "COCA Magazines", "BNC News", "", "COHA Non-Fiction",
 		"COHA Fiction", "COCA Non-Fiction", "COCA Fiction", "BNC Non-Fiction", 
 		"BNC Fiction"]
+
+	category_ticks_with_size = []
+	for cat in category_ticks:
+		if cat != "":
+			size = len(df[df["source category"] == cat])
+			category_ticks_with_size.append(f"{cat} (n={size:,})")
+		else:
+			category_ticks_with_size.append("")
 
 
 	N = 2000
@@ -230,7 +252,7 @@ def combined_snapshots(measure="H_2", measure_name="Bigram Entropy"):
 	plt.ylabel("")
 	plt.xlabel(measure_name)
 
-	plt.yticks(range(len(category_ticks)), category_ticks)
+	plt.yticks(range(len(category_ticks_with_size)), category_ticks_with_size)
 
 	plt.grid(axis="x")
 
@@ -259,6 +281,6 @@ if __name__=="__main__":
 
 	fig = plt.figure(figsize=(fig_width, fig_height), constrained_layout=True)
 	
-	combined_snapshots(measure="H_2", measure_name="Bigram Entropy")
+	combined_snapshots(measure="zipf_clauset", measure_name="-Zipf Exponent")
 
 	plt.show()
