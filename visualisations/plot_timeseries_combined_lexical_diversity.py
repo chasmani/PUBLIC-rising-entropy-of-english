@@ -80,6 +80,7 @@ def big_fig(N=2000):
 
 
 	plt.savefig("images/lexical_diversity_trend_N_{}.tiff".format(N), format="tiff", dpi=300)
+	plt.savefig("images/Figure1.png", dpi=600)
 
 	plt.show()
 

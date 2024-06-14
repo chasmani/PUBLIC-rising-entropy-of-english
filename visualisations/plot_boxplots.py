@@ -281,6 +281,6 @@ if __name__=="__main__":
 
 	fig = plt.figure(figsize=(fig_width, fig_height), constrained_layout=True)
 	
-	combined_snapshots(measure="zipf_clauset", measure_name="-Zipf Exponent")
+	combined_snapshots(measure="H_1", measure_name="Word Entropy")
 
 	plt.show()

@@ -227,6 +227,10 @@ def plot_timeseries_with_media_categories(measure="H_1", measure_name="Word Entr
 
 	plt.savefig("images/coha_categories_timeseries_{}.tiff".format(measure), dpi=300)
 	plt.savefig("images/coha_categories_timeseries_{}.png".format(measure), dpi=300)
+	plt.savefig("images/Figure2.png".format(measure), dpi=600)
+
+	print("Done")
+	
 
 	plt.show()
 
@@ -234,5 +238,5 @@ def plot_timeseries_with_media_categories(measure="H_1", measure_name="Word Entr
 if __name__=="__main__":
 	#get_timeseries_combined_plot_with_conf_intervals()
 	#plt.show()
-	plot_timeseries_with_media_categories(measure="zipf_clauset", measure_name="-Zipf Exponent")
+	plot_timeseries_with_media_categories(measure="H_1", measure_name="Word Entropy")
 	
